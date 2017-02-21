@@ -22,7 +22,7 @@
 
 
 static t_queue_global q_data;
-static unsigned long mem_alloc_count = 0; //测试申请内存
+static unsigned long mem_alloc_count = 0; //For memory testing
 
 
 #ifdef __MALLOC_TEST_ONLY_
