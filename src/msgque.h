@@ -1,3 +1,19 @@
+/************************************************************************
+**         Message queue manager basic functions
+**
+** Copyright 2017 Chen Xiangyu(xiangyu.chen@aol.com) 
+**
+**
+** Project website:
+** https://github.com/chenxy1988/msgque
+**
+** This is a mothod for multi-thread communication under linux.
+** Should you have any questions, pls. do not hesitate to 
+** contact xiangyu.chen@aol.com
+**
+*************************************************************************/
+
+
 #ifndef __MSGQUE_H__
 #define __MSGQUE_H__
 
