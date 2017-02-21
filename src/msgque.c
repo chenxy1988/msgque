@@ -107,8 +107,6 @@ static int msgque_sem_create(t_semid *psemid)
     t_scb *pscb = NULL;
     int semindex;
 
-    *psemid = (t_semid)NULL;
-
     msgque_mutex_lock(&q_data.g_sem_mutex);
 
     semindex = q_data.semnum;    
@@ -248,7 +246,7 @@ static int msgque_sem_wait(t_semid semid)
  *
  */
 
-unsigned long msgque_create()
+int msgque_create()
 {
     t_qcb *pqcb = NULL;
     int qindex;

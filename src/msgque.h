@@ -20,8 +20,8 @@
 #define M_RET_FAIL	-1
 
 
-typedef unsigned long t_queid;
-typedef unsigned long t_semid;
+typedef unsigned int t_queid;
+typedef unsigned int t_semid;
 
 typedef void * t_msg;
 typedef void * (*t_malloc_handler)(unsigned long size);
@@ -65,7 +65,7 @@ typedef struct
 }t_queue_global ;
 
 int msgque_init();
-unsigned long msgque_create();
+int msgque_create();
 int msgque_send(unsigned long qid,void *msg,unsigned short msglen);
 int msgque_recv(unsigned long qid,void **msg,unsigned short *msglen);
 
