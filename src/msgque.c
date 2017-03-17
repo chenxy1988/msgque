@@ -268,7 +268,7 @@ int msgque_create()
     if(qindex >= OS_WRAP_MAX_QUEUES)    
     {
         msgque_mutex_unlock(&q_data.g_que_mutex);
-        printf("sys_msgque_create(); qindex >= OS_WARP_MAX_QUEUES \n");
+        printf("msgque_create(); qindex >= OS_WARP_MAX_QUEUES \n");
         return (M_RET_FAIL);
     }
 
@@ -276,14 +276,14 @@ int msgque_create()
 
     if(msgque_sem_create(&pqcb->semid) != M_RET_OK)
     {
-        printf("sys_msgque_create(); msgque_sem_create() != 0 \n");
+        printf("msgque_create(); msgque_sem_create() != 0 \n");
         msgque_mutex_unlock(&q_data.g_que_mutex);
         return (M_RET_FAIL);
     }
 
     if(msgque_mutex_create(&pqcb->qmutex) != M_RET_OK)
     {
-        printf("sys_msgque_create(); msgque_mutex_create() != 0 \n");
+        printf("msgque_create(); msgque_mutex_create() != 0 \n");
         msgque_mutex_unlock(&q_data.g_que_mutex);
         return (M_RET_FAIL);
     }
@@ -315,7 +315,7 @@ int msgque_send(unsigned long qid,void *msg,unsigned short msglen)
 
     if(msg == NULL)
     {
-        printf("sys_msgque_send(),msg == NULL \n");
+        printf("msgque_send(),msg == NULL \n");
         return (M_RET_FAIL);
     }
 
@@ -323,7 +323,7 @@ int msgque_send(unsigned long qid,void *msg,unsigned short msglen)
 
     if(qindex >= OS_WRAP_MAX_QUEUES)
     {
-        printf("sys_msgque_send();qid error\n");
+        printf("msgque_send();qid error\n");
         return (M_RET_FAIL);
     }
 
@@ -333,7 +333,7 @@ int msgque_send(unsigned long qid,void *msg,unsigned short msglen)
 
     if(pbmsg == NULL)
     {
-        printf("sys_msgque_send(),mem_malloc pbmsg == NULL \n");
+        printf("msgque_send(),mem_malloc pbmsg == NULL \n");
         return (M_RET_FAIL);
     }
 
